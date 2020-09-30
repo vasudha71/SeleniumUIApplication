@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]">
+  <parameter name="excel" value="D://DemandNavigator2.0_SA.xlsx"/>
+  <parameter name="browser" value="IE"/>
+  <parameter name="driverPath" value="D://IEDriverServer.exe"/>
+  <test parallel="tests" name="FirefoxTest(failed)">
+    <parameter name="excel" value="D://DemandNavigator2.0_SA.xlsx"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="driverPath" value="D://geckodriver.exe"/>
+    <classes>
+      <class name="Running.ExecutionTest">
+        <methods>
+          <include name="testcases"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="initial"/>
+        </methods>
+      </class> <!-- Running.ExecutionTest -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+  <test parallel="tests" name="ChromeTest(failed)">
+    <parameter name="excel" value="D://DemandNavigator2.0_SA.xlsx"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="driverPath" value="D://chromedriver.exe"/>
+    <classes>
+      <class name="Running.ExecutionTest">
+        <methods>
+          <include name="testcases"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="initial"/>
+        </methods>
+      </class> <!-- Running.ExecutionTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+  <test parallel="tests" name="IETest(failed)">
+    <parameter name="excel" value="D://DemandNavigator2.0_SA.xlsx"/>
+    <parameter name="browser" value="IE"/>
+    <parameter name="driverPath" value="D://IEDriverServer.exe"/>
+    <classes>
+      <class name="Running.ExecutionTest">
+        <methods>
+          <include name="testcases"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="initial"/>
+        </methods>
+      </class> <!-- Running.ExecutionTest -->
+    </classes>
+  </test> <!-- IETest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
