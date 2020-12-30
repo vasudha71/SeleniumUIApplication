@@ -40,6 +40,7 @@ public WebDriver webBrowser() throws Exception{
 //	Properties prop=rp.getPath();	// store the path which is saved in properties file
 //	String browser=prop.getProperty(Information.DRIVER);
 	if(driver==null) {
+		System.out.println("Selected browser is "+browser);
 	if(browser.equalsIgnoreCase(Information.FIREFOX)){
 		try {
 			FirefoxOptions profile =new FirefoxOptions();

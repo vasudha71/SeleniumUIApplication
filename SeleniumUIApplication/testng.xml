@@ -2,11 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" name="Suite" parallel="tests">
   <test name="ChromeTest">
-      <parameter name="browser" value="chrome"/>
-      <parameter name="excel" value="D://VolumeFor.xlsx"/>
+      <parameter name="browser" value="${browserName}"/>
+      <parameter name="excel" value="SeleniumUIApplication//dataFiles//AccountNav.xlsx"/>
       <parameter name="driverPath" value="D://chromedriver.exe"/>
+      <parameter name="reportName" value="${report}"/>
     <classes>
-      <class name="Running.ExecutionTest"/>
+      <class name="Running.ExecutionTest">
+      </class>
     </classes>
   </test> 
    <!-- <test name="FirefoxTest">

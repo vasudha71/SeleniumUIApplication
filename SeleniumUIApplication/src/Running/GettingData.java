@@ -75,6 +75,9 @@ public String operation(Properties p,String[] column,int row, String sh, int res
 	case "CLICK":										// for clicking on any element
 		return keywordObjects.getClick().testing(p, column, row, sh, resultRow, imp);
 				
+	case "CLEAR":										
+		return keywordObjects.getClick().testing(p, column, row, sh, resultRow, imp);
+		
 	case "OPTIONAL":
 		return keywordObjects.getClick().optional(p, column, row, sh, resultRow, imp);
 				
@@ -228,6 +231,7 @@ public String operation(Properties p,String[] column,int row, String sh, int res
 		
 	case "GETTING TEXT":
 		return keywordObjects.getGettingText().testing(p, column, row, sh, resultRow, imp);
+		
 	default:
 			return keywordObjects.getDef().existing(p,column, row, sh, resultRow,imp);
 			

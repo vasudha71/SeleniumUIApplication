@@ -39,6 +39,7 @@ public class GettingText implements Information{
 			valueFromCell = valueFromCell.replaceAll("\\$", "");
 			valueFromCell = valueFromCell.replaceAll("k", "");
 			valueFromCell=valueFromCell.replaceAll(",", "");
+			valueFromCell=valueFromCell.replaceAll("£", "");
 			valueFromCell=valueFromCell.replaceAll("%", "");
 			
 			if (valueFromCell.equals("-") || valueFromCell.equals(" ")) {
@@ -52,10 +53,16 @@ public class GettingText implements Information{
 					valueFromCell = "-" + valueFromCell;
 					System.out.println("After paranthesis removal :: " + valueFromCell);
 				}
+				
+				
+				// To get Quarter Number
+				if (valueFromCell.contains("-")) {
+					convertedValue = Double.parseDouble(valueFromCell.split("-")[1].trim());
+				}else{
+					convertedValue = Double.parseDouble(valueFromCell);
+				}
 			
-				convertedValue = Double.parseDouble(valueFromCell);
-				
-				
+				System.out.println("convertedValue :: "+convertedValue);
 				System.out.println("Data for the xpath"+valueFromCell);
 			}
 			

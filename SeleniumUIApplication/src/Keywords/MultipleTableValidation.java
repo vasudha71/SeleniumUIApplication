@@ -54,7 +54,7 @@ public class MultipleTableValidation implements Information{
 			String typeofContMargin = elements[2].trim();
 			System.out.println("Type of cont.Margin:"+typeofContMargin);
 			int i;
-			if(typeofContMargin.equalsIgnoreCase("ContributionMarginDollar")) {
+			if(typeofContMargin.equalsIgnoreCase("Dollar")) {
 				System.out.println("Entered Contribution margin$");
 						    ArrayList<Map<String, Double>> Revenue = TABLE_VALUES.get(elements[0]);
 							ArrayList<Map<String, Double>> AllocatedCost = TABLE_VALUES.get(elements[1]);			
@@ -103,7 +103,7 @@ public class MultipleTableValidation implements Information{
 							}
 			}
 			else {
-				if(typeofContMargin.equalsIgnoreCase("ContributionMargin")) {		
+				if(typeofContMargin.equalsIgnoreCase("percentss")) {		
 					ArrayList<Map<String, Double>> ContributionMargin$ = TABLE_VALUES.get(elements[0]);
 					ArrayList<Map<String, Double>> Revenue = TABLE_VALUES.get(elements[1]);			
 					ArrayList<Map<String, Double>> ContributionMargin = TABLE_VALUES.get(elements[2]);

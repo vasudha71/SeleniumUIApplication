@@ -47,6 +47,7 @@ public List<Map<String,String>> testing(String[] imp) throws Exception{
 	// for open the browser
 	// for firefox browser
 	browser=imp[BROWSERNAME];
+	System.out.println("Browser name in Final:"+browser);
 	browserPath=imp[BROWSERPATH];
 	browserObject = new Browser(browser, browserPath);
 	browserObject.setNullWebDriver();

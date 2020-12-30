@@ -5,6 +5,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import Common.Browser;
 import Keywords.AlertBox;
 import Keywords.Checkbox;
+import Keywords.Clear;
 import Keywords.Click;
 import Keywords.CopyAndPaste;
 import Keywords.Default;
@@ -75,6 +76,7 @@ public class KeywordObjects {
     private MultipleTableValidation multipletablevalidation;
     private FinancialView financialView;
     private GettingText gettingText;
+    private Clear clear;
    
 	
 	ExtentTest test;
@@ -95,6 +97,9 @@ public class KeywordObjects {
 
 	public Click getClick() throws Exception {
 		return (click == null) ? new Click(browser.getWebDriver(), test) : click;
+	}
+	public Clear getClear() throws Exception {
+		return (clear == null) ? new Clear(browser.getWebDriver(), test) : clear;
 	}
 
 	public Popup getPopup() throws Exception {

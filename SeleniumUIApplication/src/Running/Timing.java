@@ -12,7 +12,8 @@ public class Timing {
 	return timefr;
 }
 public String timeReport(){
-	DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");
+	DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
+	//DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 	Date date = new Date();
 	String timerep=dateFormat.format(date);
 	return timerep;
