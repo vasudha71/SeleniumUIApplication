@@ -20,16 +20,4 @@
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>dataFiles/AccountNav.properties</name>
-			<type>1</type>
-			<location>D:/AccountNav.properties</location>
-		</link>
-		<link>
-			<name>dataFiles/AccountNav.xlsx</name>
-			<type>1</type>
-			<location>D:/AccountNav.xlsx</location>
-		</link>
-	</linkedResources>
 </projectDescription>
