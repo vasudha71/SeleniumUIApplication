@@ -25,6 +25,7 @@ public GoToUrl(WebDriver driver,ExtentTest test) throws Exception{
 		driver.get(p.getProperty(record[OBJECTNAME]));
 			String title_name=driver.getTitle();
 			String actual="Problem loading page";
+			if (title_name != null && (title_name.startsWith("http://") || title_name.startsWith("https://"))) {
 			if(title_name.equals(actual.trim())){
 				cond= false;
 				obj.getExcelResult().setData(cond,row,sh,resultRow,Information.FAIL,imp);
@@ -37,6 +38,7 @@ public GoToUrl(WebDriver driver,ExtentTest test) throws Exception{
 				obj.getExtentTest().log(LogStatus.PASS, record[STEPNUMBER],"Description: "+record[DESCRIPTION]+"<html><br></html> Output: "+record[EXPECTED_COLUMN]);				// for pass purpose
 				return Information.PASS;
 			}
+			}
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		ResultUpdation noe=new ResultUpdation(obj);
@@ -44,6 +46,7 @@ public GoToUrl(WebDriver driver,ExtentTest test) throws Exception{
 				+"' because of "+e.getClass().getSimpleName(),imp);
 		return FAIL;
 	}
+	return FAIL;
  }
  
  public String urlVerify(Properties p,String[] record,int row, String sh, int resultRow,String[] imp) throws Exception{
