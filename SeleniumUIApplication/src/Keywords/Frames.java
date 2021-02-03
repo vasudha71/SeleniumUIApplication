@@ -32,9 +32,9 @@ public String testing(Properties p,String[] record,int row, String sh, int resul
 		catch(Exception ne){
 			
 			ResultUpdation noe=new ResultUpdation(obj);
-			noe.withoutBy(p, record, row, sh, resultRow, FRAME_WARNING,imp);
+			//noe.withoutBy(p, record, row, sh, resultRow, FRAME_WARNING,imp);
 			ne.printStackTrace();
-			VALUE_STORAGE.put(record[OBJECTNAME]+VALUE_END, "false");
+			//VALUE_STORAGE.put(record[OBJECTNAME]+VALUE_END, "false");
 			return Information.INFO;
 		}
 }
