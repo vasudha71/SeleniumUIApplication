@@ -3,7 +3,7 @@
 <suite thread-count="2" name="Suite" parallel="tests">
   <test name="ChromeTest">
       <parameter name="browser" value="chrome"/>
-      <parameter name="excel" value="${user.dir}//excel//AccountNav.xlsx"/>
+      <parameter name="excel" value="${user.dir}//excel//AN_Lighting.xlsx"/>
       <parameter name="driverPath" value="D://chromedriver.exe"/>
       <parameter name="reportName" value="${report}"/>
     <classes>
