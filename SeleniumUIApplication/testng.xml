@@ -5,7 +5,7 @@
       <parameter name="browser" value="chrome"/>
       <parameter name="excel" value="${user.dir}//excel//AN_Lighting.xlsx"/>
       <parameter name="driverPath" value="D://chromedriver.exe"/>
-      <parameter name="reportName" value="${report}"/>
+      
     <classes>
       <class name="Running.ExecutionTest">
       </class>
