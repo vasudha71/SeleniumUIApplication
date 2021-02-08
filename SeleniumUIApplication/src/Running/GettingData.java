@@ -121,6 +121,9 @@ public String operation(Properties p,String[] column,int row, String sh, int res
 	case "NEGATIVE VERIFY":
 		return keywordObjects.getVerifyText().negative(p, column, row, sh, resultRow, imp);
 		
+	case "VERIFYING GEETINGTEXT VALUES":
+		return keywordObjects.getVerifyText().verifyGettingTextValues(p, column, row, sh, resultRow, imp);
+		
 	case "MOUSEHOVER":										// for mousehover on element
 		return keywordObjects.getMouseHover().testing(p, column, row, sh, resultRow, imp);
 		

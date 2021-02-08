@@ -22,6 +22,9 @@ public Frames(WebDriver driver,ExtentTest test) throws Exception{
 	obj = new Objects(driver, test);
 }
 public String testing(Properties p,String[] record,int row, String sh, int resultRow,String[] imp ) throws Exception{
+
+	int attempts=0;
+	while(attempts<2) {
 	try{
 		WebElement frame=driver.findElement(obj.getLocators().getObject(p,record[OBJECTNAME],record[OBJECTTYPE]));
 		driver.switchTo().frame(frame);
@@ -35,8 +38,11 @@ public String testing(Properties p,String[] record,int row, String sh, int resul
 			//noe.withoutBy(p, record, row, sh, resultRow, FRAME_WARNING,imp);
 			ne.printStackTrace();
 			//VALUE_STORAGE.put(record[OBJECTNAME]+VALUE_END, "false");
-			return Information.INFO;
+			//return Information.INFO;
 		}
+	attempts++;
+	}
+	return Information.INFO;	
 }
 
 public String window(Properties p,String[] record,int row, String sh, int resultRow,String[] imp ) throws Exception{

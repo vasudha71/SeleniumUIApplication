@@ -171,4 +171,54 @@ public class VerifyText implements Information {
 			return Information.FAIL;
 		}
 	}
+	
+	/*This keyword is used to verify 2 values after gettingText and stored in variable
+	Eg: ModifyRiskscore=StrategicRiskscore---By using GettingText keyword, get the value and stored in ModifyRiskscore and
+	StrategicRiskscore and after comparing using this keyword(verifyGettingTextValues) wheather it is equal or not*/
+	
+public String verifyGettingTextValues(Properties p,String[] record,int row, String sh, int resultRow,String[] imp) throws Exception{
+		
+		try{
+			
+			Double expectedValueDouble = null;
+			String[] elements = record[VALUE].split(",");
+			String v1=elements[0].trim();
+			String v2=elements[1].trim();
+			System.out.println("value1:"+v1);
+			System.out.println("Value2:"+v2);
+			Double value1=TABLE_DATA.get(v1);
+			Double value2=TABLE_DATA.get(v2);
+			String s1=Double.toString(value1);
+			System.out.println("String s1 value:"+s1);
+			String s2=Double.toString(value2);
+			System.out.println("String s2 value:"+s2);
+			if(s1.equals(s2)) {
+				System.out.println("Both values are valid");
+				cond= true;
+				ru.updateResult(cond, sh, row, resultRow, PASS, imp, record);
+				obj.getExcelResult().setData(cond, row, sh, resultRow, Information.FAIL, imp);
+				obj.getExtentTest().log(LogStatus.FAIL, record[STEPNUMBER],
+						"Description: " + record[DESCRIPTION] + "\n Values are present");
+				return Information.PASS;
+				}
+			else {
+				ru.updateResult(cond, sh, row, resultRow, FAIL, imp, record);
+				obj.getExcelResult().setData(cond, row, sh, resultRow, Information.FAIL, imp);
+				obj.getExtentTest().log(LogStatus.FAIL, record[STEPNUMBER],
+						"Description: " + record[DESCRIPTION] + "\n Values are not present");
+				return Information.FAIL;
+			}
+		
+
+		//return Information.PASS;
+		} 
+		catch (Exception e) {
+			ru.testing(p, record, row, sh, resultRow, Information.FAIL, imp);
+			e.printStackTrace();
+			VALUE_STORAGE.put(record[OBJECTNAME] + VALUE_END, "false");
+			return Information.FAIL;
+			
+}
+		
+}
 }
