@@ -196,8 +196,8 @@ public String verifyGettingTextValues(Properties p,String[] record,int row, Stri
 				System.out.println("Both values are valid");
 				cond= true;
 				ru.updateResult(cond, sh, row, resultRow, PASS, imp, record);
-				obj.getExcelResult().setData(cond, row, sh, resultRow, Information.FAIL, imp);
-				obj.getExtentTest().log(LogStatus.FAIL, record[STEPNUMBER],
+				obj.getExcelResult().setData(cond, row, sh, resultRow, Information.PASS, imp);
+				obj.getExtentTest().log(LogStatus.PASS, record[STEPNUMBER],
 						"Description: " + record[DESCRIPTION] + "\n Values are present");
 				return Information.PASS;
 				}
