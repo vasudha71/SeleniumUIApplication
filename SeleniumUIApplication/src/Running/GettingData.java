@@ -234,7 +234,10 @@ public String operation(Properties p,String[] column,int row, String sh, int res
 		
 	case "GETTING TEXT":
 		return keywordObjects.getGettingText().testing(p, column, row, sh, resultRow, imp);
-		
+	
+	case "GETTING VALUE":
+		return keywordObjects.getGettingText().GettingValue(p, column, row, sh, resultRow, imp);
+
 	default:
 			return keywordObjects.getDef().existing(p,column, row, sh, resultRow,imp);
 			

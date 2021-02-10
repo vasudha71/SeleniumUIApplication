@@ -78,4 +78,23 @@ public class GettingText implements Information{
 			return Information.FAIL;
 		}
 }
+public String GettingValue(Properties p,String[] record,int row, String sh, int resultRow,String[] imp) throws Exception{
+		
+		try{
+			
+			WebElement valueText=obj.getFluent().fluentWait(obj.getLocators().getObject(p,record[OBJECTNAME],record[OBJECTTYPE]));
+			//obj.getJavaScript().highlight(valueText);	
+			String valueFromCell=valueText.getText();
+			double value = Double.parseDouble(valueFromCell);
+			System.out.println("text:"+value);
+			TABLE_DATA.put(record[OBJECTNAME], value);
+			return Information.PASS;
+}
+		catch(Exception ne){
+			ru.testing(p, record, row, sh, resultRow, Information.FAIL,imp);
+			ne.printStackTrace();
+			return Information.FAIL;
+		}
+	
+}
 }
